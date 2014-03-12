@@ -1,0 +1,29 @@
+Rails Assesment
+
+How does rails communicate with the database?  Please be thorough in discussing all the config files and pieces of rails necessary to communicate with the database.
+
+- Rails communicates to the DB through an ORM like ActiveRecord. First steps is to setup your database in your config/database.yml file, which rails does by default setting up sqlite. You'll also need to create a migration in the db/migrate folder, then run in which would create the schema.rb file. The actual database is located in db/schema.rb. You have the option of leveraging the db/seeds.rb file to prepopulate your database with test data.
+
+What is a resource?
+ - Is the data the web application will be performing the CRUD operations on.
+
+What are the standard RESTful routes for a resource?
+- index, show, new, update, delete
+
+What is CRUD?
+- Create, Read, Update and Delete. The database operations that can be performed on a resource.
+
+What is REST?
+- Is a web convention where each resource route maps to a specific agreed upon CRUD operation.
+
+What is the difference between CRUD and REST?
+- REST is a style/architecture for setting up the web application where CRUD is the database operations performed on the resources.
+
+Describe the flow of a request from a users browser through the rails stack and back.
+- The browser sends a request to the server, the server then matches that request route with the controller and action in the config/routes.rb file. The controller action then performs whatever logic is needed then the view page is rendered along with any preprocessing that needs to be done before being a pure html document. That HTML document is then sent back to the browser to be shown on the screen.
+
+What are HTTP verbs?
+- GET, PUT/PATCH, POST, DELETE
+
+Why do we use migrations.
+- Migrations are how we set up the database schema via the ORM. Migrations are basically the set of instructions to recreate that schema. 
